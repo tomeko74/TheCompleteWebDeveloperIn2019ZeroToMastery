@@ -4,6 +4,9 @@
 const sum = (a, b) => a + b
 
 //Closure: What does the last line return?
+//Closure: a function ran, the function executed, it's ner gonna be executed again.
+//BUT it's going to remember that there are references to those variables so the
+//child scope always has access to the parent scope (not vice versa)
 const addTo = x => y => x + y
 var addToTen = addTo(10)
 addToTen(3) // returns 13
