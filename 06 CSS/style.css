@@ -1,0 +1,98 @@
+* {
+	text-align: right;
+}
+
+body {
+	background-image: url(backgroundimage.jpg);
+	background-size: cover;
+}
+
+h2, p {
+	color: #AC453D;
+	text-align: center;
+	border: 5px solid rgba(213, 118, 111, 0.5);
+	cursor: pointer;
+	font-family: 'Poiret One', cursive;
+}
+
+p {
+	line-height: 30px;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 150%;
+	font-family: 'Poiret One', cursive;
+}
+
+p:hover {
+	color: green;
+}
+/*
+p {
+	color: pink !important;
+}
+*/
+p {
+	color: blue; /*nic się nie zmieni, bo wyżej jest !important*/
+}
+
+
+li {
+	list-style: none;
+	display: inline-block;
+}
+
+.webtext {
+	border: 5px dashed green;
+}
+
+.webtext:first-child {
+	border: 5px dashed blue;
+}
+
+.webtext:last-child {
+	border: 5px dashed red;
+}
+
+.active {
+	color: red;
+}
+
+#div1 {
+	background: rgba(0,0, 255, 0.2);
+}
+
+#div2 {
+	background: rgba(255,0, 0, 0.2);
+}
+
+img {
+	float: right;
+}
+
+/*jak chcemy wyczyścić floatowanie obrazków i dać znowu tekst na całość, musimy dać po img sekcję, która ma clear, jak np. footer tu
+*/footer {
+	clear: both;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

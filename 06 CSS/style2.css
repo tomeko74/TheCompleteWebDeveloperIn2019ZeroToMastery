@@ -1,0 +1,25 @@
+h2 {
+	color: blue;
+}
+
+/*od zewnętrznego jest margin, border, padding, content
+*/
+.boxmodel {
+	margin: 10px 20px;
+	border: 5px solid red;
+	padding: 5px 20px 5px 20px; /*domyślnie top, right, bottom, left, jak tylko dwa to top i bottom oraz left i rght są równe*/
+	width: 30px;
+	height: 20px;
+	display: inline-block;
+}
+
+p {
+	font-size: 20px;
+}
+
+span {
+	font-size: 5em; /*em robi tu 5 x większe niż otaczający element, czyli dokładnie to samo co 100px w tym przypadku*/
+}
+
+/*natomiast rem zamiast em daje x razy większe w porównaniu do elementu rootowego czyli <html>
+*/
