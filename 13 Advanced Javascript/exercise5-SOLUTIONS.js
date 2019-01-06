@@ -50,6 +50,8 @@ const filterArray = array.filter(user => {
 console.log(filterArray);
 
 //Find out the total score of all users using reduce
+//First parameter function with parameter accumulator acc, variable used to store reducing effect
+//Second parameter, here 0, starting value of acc
 const total = array.reduce((acc, user) => {
 	return acc + user.score
 }, 0);

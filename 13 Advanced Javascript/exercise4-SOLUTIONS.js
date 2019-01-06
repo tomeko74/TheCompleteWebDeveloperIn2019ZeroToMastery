@@ -12,6 +12,9 @@ var addToTen = addTo(10)
 addToTen(3) // returns 13
 
 //Currying: What does the last line return?
+//Means changing functions taking two parameters to taking one at a time
+//its exensible, we can create own function like const add5 = curriedSum(5)
+//and using it like add5(5) or add5(100)
 const sum = (a, b) => a + b
 const curriedSum = (a) => (b) => a + b
 curriedSum(30)(1) // 31
@@ -24,6 +27,8 @@ const add5 = curriedSum(5)
 add5(12) // 17
 
 //Composing: What does the last line return?
+//Is the act of putting two functions together to form a third function where the output
+//of one function is the input of the other
 const compose = (f, g) => (a) => f(g(a));
 const add1 = (num) => num + 1;
 const add5 = (num) => num + 5;
