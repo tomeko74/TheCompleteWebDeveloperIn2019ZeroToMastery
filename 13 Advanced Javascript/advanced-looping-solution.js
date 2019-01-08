@@ -10,16 +10,24 @@ for (let i = 0; i < basket.length; i++) {
   console.log(basket[i]);
 }
 
-//2
+//2 new in ES5
 basket.forEach(item => {
   console.log(item);
 })
 
+//for in loop - works with objects, we can loop over and check object properties
+//it is enumerating
 for (item in detailedBasket) {
   console.log(item);
 }
 
+//for of loop - new in ES6, you can iterating over arrays and strings
+//it is iterating
 for (item of basket) {
+  console.log(item);
+}
+
+for (item of 'basket') {
   console.log(item);
 }
 
