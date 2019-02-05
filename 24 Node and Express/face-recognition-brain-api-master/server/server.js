@@ -40,7 +40,6 @@ app.post('/findface', (req, res) => {
   res.json('nope')
 })
 
-
 app.post('/register', (req, res) => {
   database.users.push({
     id: '124',
