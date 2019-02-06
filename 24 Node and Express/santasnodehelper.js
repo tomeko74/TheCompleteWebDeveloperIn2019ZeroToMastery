@@ -1,36 +1,49 @@
 const fs = require('fs');
 
-// READ
-fs.readFile('./hello.txt', (err, data) => {
-    console.time('funchallenge');
-    if (err) {
-        console.log('errrrrrrr');
-    }
-    console.log('Async', data.toString('utf8'));
-    console.timeEnd('funchallenge');
-})
+// 1 - What floor does Santa end up on
+// ( --> should go UP 1 floor
+// ) --> should go DOWN 1 floor
 
-const file = fs.readFileSync('./hello.txt');
-console.log('Sync', file.toString('utf8'));
+function question1() {
+    fs.readFile('./santa.txt', (err, data) => {
+        console.time('funchallenge');
+        const directions = data.toString();
+        const directionsArray = directions.split('');
+        const answer = directionsArray.reduce((acc, currentValue) => {
+          if (currentValue === '(') {
+              return acc += 1
+          } else if (currentValue === ')') {
+              return acc -= 1
+          }
+        }, 0)
+        console.timeEnd('funchallenge');
+        console.log('answer:', answer);
+    }) 
+}
 
-// APPEND
-fs.appendFile('./hello.txt', ' This is so cool!', err => {
-    if (err) {
-        console.log(err)
-    }
-})
+//question1();
 
-// WRITE
-fs.writeFile('./bad.txt', ' Sad to see you go...', err => {
-    if (err) {
-        console.log(err)
-    }
-})
+// 2 - When does Santa first enter the basement
+function question2() {
+    fs.readFile('./santa.txt', (err, data) => {
+        console.time('funchallenge');
+        const directions = data.toString();
+        const directionsArray = directions.split('');
+        let accumulator = 0;
+        let counter = 0;
+        const answer = directionsArray.some((currentItem) => {
+          if (currentItem === '(') {
+              accumulator += 1
+          } else if (currentItem === ')') {
+              accumulator -= 1
+          }
+          counter++;
+          return accumulator < 0;
+        })
+        console.timeEnd('funchallenge');
+        console.log('answer:', counter);
+    }) 
+}
 
-// DELETE
-fs.unlink('./bad.txt', err => {
-    if (err) {
-        console.log(err)
-    }
-})
+question2();
 
