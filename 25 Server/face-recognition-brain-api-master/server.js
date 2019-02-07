@@ -114,8 +114,18 @@ app.post('/register', (req, res) => {
 //     .catch(err => res.status(400).json('unable to register'))
 })
 
-// app.get('/profile/:id', (req, res) => {
-//   const { id } = req.params;
+app.get('/profile/:id', (req, res) => {
+  const { id } = req.params;
+  let found = false;
+  database.users.forEach(user => {
+    if (user.id === id) {
+      found = true;
+      return res.json(user);
+    } 
+  })
+  if (!found) {
+    res.status(404).json('no such user');
+  }
 //   db.select('*').from('users').where({id})
 //     .then(user => {
 //       if (user.length) {
@@ -125,10 +135,21 @@ app.post('/register', (req, res) => {
 //       }
 //     })
 //     .catch(err => res.status(400).json('error getting user'))
-// })
+})
 
-// app.put('/image', (req, res) => {
-//   const { id } = req.body;
+app.put('/image', (req, res) => {
+  const { id } = req.body;
+  let found = false;
+  database.users.forEach(user => {
+    if (user.id === id) {
+      found = true;
+      user.entries++;
+      return res.json(user.entries);
+    } 
+  })
+  if (!found) {
+    res.status(404).json('no such user');
+  }
 //   db('users').where('id', '=', id)
 //   .increment('entries', 1)
 //   .returning('entries')
@@ -136,7 +157,7 @@ app.post('/register', (req, res) => {
 //     res.json(entries[0]);
 //   })
 //   .catch(err => res.status(400).json('unable to get entries'))
-// })
+})
 
 app.listen(3000, ()=> {
   console.log('app is running on port 3000');
