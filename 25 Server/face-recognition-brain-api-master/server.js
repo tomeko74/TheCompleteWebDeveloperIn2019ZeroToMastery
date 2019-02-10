@@ -61,16 +61,16 @@ app.get('/', (req, res)=> {
 
 app.post('/signin', (req, res) => {
   
-  // Load hash from your password DB.
-  bcrypt.compare("apples", '$2a$10$uh.dFMfWy6JLUx266SUHMOhhZNl9EXngT/9NyedJeypE3ZAVL2cTa', function(err, res) {
-    console.log('first guess', res)
-  });
-  bcrypt.compare("veggies", '$2a$10$uh.dFMfWy6JLUx266SUHMOhhZNl9EXngT/9NyedJeypE3ZAVL2cTa', function(err, res) {
-    console.log('second guess', res)
-  });
+  // // Load hash from your password DB.
+  // bcrypt.compare("apples", '$2a$10$uh.dFMfWy6JLUx266SUHMOhhZNl9EXngT/9NyedJeypE3ZAVL2cTa', function(err, res) {
+  //   console.log('first guess', res)
+  // });
+  // bcrypt.compare("veggies", '$2a$10$uh.dFMfWy6JLUx266SUHMOhhZNl9EXngT/9NyedJeypE3ZAVL2cTa', function(err, res) {
+  //   console.log('second guess', res)
+  // });
 
   if (req.body.email === database.users[0].email && req.body.password === database.users[0].password) {
-    res.json('signin');
+    res.json('success');
   } else {
     res.status(400).json('error logging in');
   }
