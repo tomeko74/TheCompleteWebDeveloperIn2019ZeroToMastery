@@ -52,6 +52,5 @@ class App extends Component {
     );
   }
 }
-
 // action done from mapDispatchToProps will channge state from mapStateToProps
 export default connect(mapStateToProps, mapDispatchToProps)(App)
